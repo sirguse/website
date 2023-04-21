@@ -1,0 +1,185 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/home.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/browse.css');
+
+
+
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(40deg,rgb(98, 108, 110),black);
+    justify-content: center;
+    overflow: hidden;
+}
+li a{
+    display:block;
+    position: relative;
+    text-align: center;
+}
+.Kosz{ /* Ustawianie poczatkowego przycisku rozmiar etc. */
+    top: 20px;
+    left: 750px;
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    border-radius: 50px;
+    position: relative;
+    transition: 0.4s ease;
+    
+}
+.Kosz.active{ /* Ustawienie wysokosci tla po kliknieciu */
+    height: 400px;
+    width: 100px;
+
+}
+.toggleBox{
+    position: relative;
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+}
+.icon{ /* Ustawienia dla tych 3 paskow */
+    position: absolute;
+    height: 4px;
+    width: 35px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(207, 197, 216);
+    border-radius: 50px;
+}
+.icon::before,.icon::after{ /* Tworzenie animacji dla przycisku */
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 35px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(207, 197, 216);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.icon::before{ /* Ustawienie pozycji dla dolnego paska */
+    top: 12px;
+}
+.icon::after{   /*Ustawienie pozycji dla gornego paska */
+    bottom: 8px;
+}
+.toggleBox.active .icon{ /* Znikniecie srodkowego po kliknieciu */
+    width: 0;
+}
+
+
+
+/* Tworzenie animacji Krzyża WAZNY ELEMENT */
+.toggleBox.active .icon::before{
+    width:45px;
+    transform: translate(-11px,4px) rotate(37deg);
+    transform-origin: right;
+}
+.toggleBox.active .icon::after{
+    width:45px;
+    transform: translate(-13px,-4px) rotate(-37deg);
+    transform-origin: right;
+}
+
+
+
+
+.toggleBox.active .li a{
+    color: black;
+}
+
+/* ustawianie ikony oraz tekstu */
+li{
+    list-style: none;
+}
+li a{
+    text-transform: uppercase;
+    color: black;
+}
+li a i{
+    position: relative;
+    display: block;
+    font-size:25px;
+    color:rgb(56, 56, 56);
+    padding: 25px 0;
+    text-align: center;
+}
+
+li a span{
+    position: absolute;
+    color: rgb(95, 95, 95);
+    margin: 22px 0;
+    font-weight: 500;
+    letter-spacing: 2px; /* Odstep miedzy slowami */
+    left:110%;
+    top: 5%;
+}
+
+.KoszItem {
+    width: 100%;
+    visibility: hidden;
+}
+.Kosz.active .KoszItem{
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    
+}
+
+.Logo{
+    cursor: pointer;
+    width: 5%;
+    height: auto;
+    
+}
+.Nav {
+    list-style: none;
+    
+}
+.Nav li {
+    display: inline-block;
+    padding: 0px 40px;
+    
+}
+<img class="Logo" src="check.png" alt="logo">
+.Nav li a {
+    transition: all 0.3s ease 0s;
+}
+.Nav li a:hover {
+    color: rgb(123, 135, 138);
+}
+*/
