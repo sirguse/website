@@ -18,7 +18,7 @@ body {
     min-height: 100vh;
     background: linear-gradient(40deg,rgb(98, 108, 110),black);
     justify-content: center;
-    overflow: hidden;
+    /*overflow: hidden; Powoduje ucinanie tekstu gdy wychodzi poza strone */
 }
 li a{
     display:block;
@@ -27,12 +27,12 @@ li a{
 }
 .Kosz{ /* Ustawianie poczatkowego przycisku rozmiar etc. */
     top: 20px;
-    left: 750px;
+    left: 1000px;
     height: 70px;
     width: 70px;
     background-color: white;
     border-radius: 50px;
-    position: relative;
+    position: absolute;
     transition: 0.4s ease;
     
 }
@@ -135,7 +135,23 @@ li a span{
     visibility: visible;
 }
 
+Section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    
+}
 
+.Sekcje {
+    scroll-snap-type: y mandatory;
+    overflow-y:scroll;
+    position: relative;
+
+
+    height: 100vh;
+}
 
 
 
