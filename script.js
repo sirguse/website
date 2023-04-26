@@ -63,7 +63,7 @@ obrazek.addEventListener('mouseleave', () => {
 
 
 
-
+//Do poprawy
 
 
 
